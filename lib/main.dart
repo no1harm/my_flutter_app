@@ -19,24 +19,47 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(
-        title: Text('首页'),
-      ),
-      body: new Center(
-        child: new RaisedButton(
-          textTheme: ButtonTextTheme.accent,
-          color: Colors.white,
-          child: Text('查看商品详情页'),
-          onPressed: (){
-            Navigator.push(context,new  MaterialPageRoute(
-              builder:(context) =>new SecondScreen())
-            );
-          }
-        ),
+      body: new ProductList(
+        productList: new List<Product>.generate(10, (i)=>Product('商品 $i','这是一个商品详情，编号为:$i')),
+      )
+    );
+  }
+}
+
+class Product {
+  final String title;
+  final String description;
+
+  Product(this.title, this.description);
+}
+
+class ProductList extends StatelessWidget {
+  final List<Product> productList;
+
+  const ProductList({Key key,@required this.productList}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: AppBar(title:Text('商品列表')),
+      body: new ListView.builder(
+        itemCount: productList.length,
+        itemBuilder: (context,index){
+          return ListTile(
+            leading: new Icon(Icons.shop),
+            title:Text(productList[index].title),
+            subtitle: Text(productList[index].description),
+            onTap: (){},
+          );
+        },
       ),
     );
   }
 }
+
+
+
+
+
 
 class SecondScreen extends StatelessWidget {
   @override
