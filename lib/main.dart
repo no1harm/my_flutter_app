@@ -48,13 +48,37 @@ class ProductList extends StatelessWidget {
             leading: new Icon(Icons.shop),
             title:Text(productList[index].title),
             subtitle: Text(productList[index].description),
-            onTap: (){},
+            onTap: (){
+              Navigator.push(context,new  MaterialPageRoute(
+                builder:(context) =>new ProductDetail(product: productList[index],))
+              );
+            },
           );
         },
       ),
     );
   }
 }
+
+class ProductDetail extends StatelessWidget {
+  final Product product;
+
+  const ProductDetail({Key key, this.product}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: AppBar(title: Text('${product.title}'),),
+      body: Center(
+        child: Text('${product.description}'),
+      ),
+    );
+  }
+}
+
+
+
+
+
 
 
 
