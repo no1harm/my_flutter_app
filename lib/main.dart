@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
 
     return new MaterialApp(
       title: 'Welcome to Flutter',
-      home: new FirstScreen()
+      home: new HomePage()
     );
   }
 }
@@ -19,10 +19,42 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      appBar: AppBar(title: Text('选择商品'),),
       body: new ProductList(
         productList: new List<Product>.generate(10, (i)=>Product('商品 $i','这是一个商品详情，编号为:$i')),
       )
     );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: AppBar(title:Text('首页')),
+      body: new Center(
+        child: RouteButton(),
+      ),
+    );
+  }
+}
+
+class RouteButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new RaisedButton(
+      onPressed:(){
+          _navigateToProductList(context);
+      },
+      child: Text('选择商品'),
+    );
+  }
+  _navigateToProductList(BuildContext context) async{  // 异步函数
+    final result = await Navigator.push(//等待
+      context, 
+      MaterialPageRoute(builder: (context)=> FirstScreen())
+    );
+    Scaffold.of(context).showSnackBar(SnackBar(content:Text('$result')));
   }
 }
 
@@ -40,7 +72,6 @@ class ProductList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(title:Text('商品列表')),
       body: new ListView.builder(
         itemCount: productList.length,
         itemBuilder: (context,index){
@@ -49,9 +80,7 @@ class ProductList extends StatelessWidget {
             title:Text(productList[index].title),
             subtitle: Text(productList[index].description),
             onTap: (){
-              Navigator.push(context,new  MaterialPageRoute(
-                builder:(context) =>new ProductDetail(product: productList[index],))
-              );
+              Navigator.pop(context,'${productList[index].title}');
             },
           );
         },
