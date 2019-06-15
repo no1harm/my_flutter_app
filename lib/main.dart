@@ -1,7 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'footer.dart';
+import 'anomalyFooter.dart';
 
 void main() => runApp(new MyApp());
 
@@ -30,6 +30,14 @@ class HomePage extends StatelessWidget {
             onTap: () => {
               Navigator.push(context,new  MaterialPageRoute(
                 builder:(context) =>new FooterGuide())
+              )
+            },
+          ),
+          new CustomButton(
+            title:'不规则底部导航',
+            onTap: () => {
+              Navigator.push(context,new  MaterialPageRoute(
+                builder:(context) =>new AnomalyFooterGuide())
               )
             },
           ),
