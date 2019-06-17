@@ -6,6 +6,7 @@ import 'routerAnimation.dart';
 import 'routerAnimationScale.dart';
 import 'routerAnimationRotate.dart';
 import 'routerAnimationSlide.dart';
+import 'aeroGlass.dart';
 
 void main() => runApp(new MyApp());
 
@@ -76,6 +77,14 @@ class HomePage extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context,new  MaterialPageRoute(
                   builder:(context) =>new FirstPageSlide())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'毛玻璃效果',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new AeroClass())
                 )
               },
             ),
