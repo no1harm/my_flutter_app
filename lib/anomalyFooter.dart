@@ -71,7 +71,7 @@ class _AnomalyFooterGuideState extends State<AnomalyFooterGuide> {
 }
 
 class AnomalyFooterPageGenarator extends StatefulWidget {
-  String _title;
+  final String _title;
   AnomalyFooterPageGenarator(this._title);
 
   @override

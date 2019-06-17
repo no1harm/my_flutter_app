@@ -2,6 +2,10 @@
 import 'package:flutter/material.dart';
 import 'footer.dart';
 import 'anomalyFooter.dart';
+import 'routerAnimation.dart';
+import 'routerAnimationScale.dart';
+import 'routerAnimationRotate.dart';
+import 'routerAnimationSlide.dart';
 
 void main() => runApp(new MyApp());
 
@@ -40,6 +44,38 @@ class HomePage extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context,new  MaterialPageRoute(
                   builder:(context) =>new AnomalyFooterGuide())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'路由动画-渐隐',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new FirstPage())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'路由动画-缩放',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new FirstPageScale())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'路由动画-旋转',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new FirstPageRotate())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'路由动画-滑动',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new FirstPageSlide())
                 )
               },
             ),
