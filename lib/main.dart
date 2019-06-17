@@ -23,25 +23,28 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(title:Text('首页')),
-      body: new ListView(
-        children: <Widget>[
-          new CustomButton(
-            title:'底部导航',
-            onTap: () => {
-              Navigator.push(context,new  MaterialPageRoute(
-                builder:(context) =>new FooterGuide())
-              )
-            },
-          ),
-          new CustomButton(
-            title:'不规则底部导航',
-            onTap: () => {
-              Navigator.push(context,new  MaterialPageRoute(
-                builder:(context) =>new AnomalyFooterGuide())
-              )
-            },
-          ),
-        ],
+      body: new Container(
+        padding: EdgeInsets.all(30.0),
+        child : new ListView(
+          children: <Widget>[
+            new CustomButton(
+              title:'底部导航',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new FooterGuide())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'不规则底部导航',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new AnomalyFooterGuide())
+                )
+              },
+            ),
+          ],
+        )
       )
     );
   }
