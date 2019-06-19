@@ -8,6 +8,7 @@ import 'routerAnimationRotate.dart';
 import 'routerAnimationSlide.dart';
 import 'aeroGlass.dart';
 import 'keepAliveDemo.dart';
+import 'searchBar.dart';
 
 void main() => runApp(new MyApp());
 
@@ -94,6 +95,14 @@ class HomePage extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context,new  MaterialPageRoute(
                   builder:(context) =>new KeepAlivePage())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'SearchBar',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new SearchBar())
                 )
               },
             ),
