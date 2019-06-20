@@ -13,6 +13,7 @@ import 'wrapLayout.dart';
 import 'staggeredGrid.dart';
 import 'expansionList.dart';
 import 'expansionLists.dart';
+import 'customCliper.dart';
 
 void main() => runApp(new MyApp());
 
@@ -140,6 +141,14 @@ class HomePage extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context,new  MaterialPageRoute(
                   builder:(context) =>new ExpansionListsDemo())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'贝塞尔曲线切割',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new CustomCliper())
                 )
               },
             ),
