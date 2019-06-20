@@ -15,6 +15,7 @@ import 'expansionList.dart';
 import 'expansionLists.dart';
 import 'customCliper.dart';
 import 'loadingPage.dart';
+import 'rightBack.dart';
 
 void main() => runApp(new MyApp());
 
@@ -158,6 +159,14 @@ class HomePage extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context,new  MaterialPageRoute(
                   builder:(context) =>new SplashScreen())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'右滑返回上一页',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new RightBackPage())
                 )
               },
             ),
