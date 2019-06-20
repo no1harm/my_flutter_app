@@ -14,6 +14,7 @@ import 'staggeredGrid.dart';
 import 'expansionList.dart';
 import 'expansionLists.dart';
 import 'customCliper.dart';
+import 'loadingPage.dart';
 
 void main() => runApp(new MyApp());
 
@@ -149,6 +150,14 @@ class HomePage extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context,new  MaterialPageRoute(
                   builder:(context) =>new CustomCliper())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'闪屏页面',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new SplashScreen())
                 )
               },
             ),
