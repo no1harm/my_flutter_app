@@ -11,6 +11,8 @@ import 'keepAliveDemo.dart';
 import 'searchBar.dart';
 import 'wrapLayout.dart';
 import 'staggeredGrid.dart';
+import 'expansionList.dart';
+import 'expansionLists.dart';
 
 void main() => runApp(new MyApp());
 
@@ -122,6 +124,22 @@ class HomePage extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context,new  MaterialPageRoute(
                   builder:(context) =>new StaggeredGrid())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'展开闭合效果',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new ExpansionPanlDemo())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'展开闭合列表',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new ExpansionListsDemo())
                 )
               },
             ),
