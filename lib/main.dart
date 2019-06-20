@@ -9,6 +9,7 @@ import 'routerAnimationSlide.dart';
 import 'aeroGlass.dart';
 import 'keepAliveDemo.dart';
 import 'searchBar.dart';
+import 'wrapLayout.dart';
 
 void main() => runApp(new MyApp());
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Welcome to Flutter',
       theme:ThemeData.light(),
+      debugShowCheckedModeBanner: false,
       home: new HomePage()
     );
   }
@@ -103,6 +105,14 @@ class HomePage extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context,new  MaterialPageRoute(
                   builder:(context) =>new SearchBar())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'流式布局',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new WrapLayout())
                 )
               },
             ),
