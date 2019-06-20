@@ -10,6 +10,7 @@ import 'aeroGlass.dart';
 import 'keepAliveDemo.dart';
 import 'searchBar.dart';
 import 'wrapLayout.dart';
+import 'staggeredGrid.dart';
 
 void main() => runApp(new MyApp());
 
@@ -113,6 +114,14 @@ class HomePage extends StatelessWidget {
               onTap: () => {
                 Navigator.push(context,new  MaterialPageRoute(
                   builder:(context) =>new WrapLayout())
+                )
+              },
+            ),
+            new CustomButton(
+              title:'瀑布流布局',
+              onTap: () => {
+                Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =>new StaggeredGrid())
                 )
               },
             ),
